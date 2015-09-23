@@ -1,0 +1,6 @@
+F:\BaiduYunDownload\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.csprojResolveAssemblyReference.cache
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.dll
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.pdb
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.csprojResolveAssemblyReference.cache
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.dll
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.pdb

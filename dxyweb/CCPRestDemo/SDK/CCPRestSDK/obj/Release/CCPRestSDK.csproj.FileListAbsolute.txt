@@ -1,0 +1,5 @@
+D:\My Documents\Desktop\CCP_REST_DEMO_CSharp_v2.6r\CCPRestDemo\SDK\CCPRestSDK\bin\Release\CCPRestSDK.dll
+D:\My Documents\Desktop\CCP_REST_DEMO_CSharp_v2.6r\CCPRestDemo\SDK\CCPRestSDK\bin\Release\CCPRestSDK.pdb
+D:\My Documents\Desktop\CCP_REST_DEMO_CSharp_v2.6r\CCPRestDemo\SDK\CCPRestSDK\obj\Release\CCPRestSDK.csprojResolveAssemblyReference.cache
+D:\My Documents\Desktop\CCP_REST_DEMO_CSharp_v2.6r\CCPRestDemo\SDK\CCPRestSDK\obj\Release\CCPRestSDK.dll
+D:\My Documents\Desktop\CCP_REST_DEMO_CSharp_v2.6r\CCPRestDemo\SDK\CCPRestSDK\obj\Release\CCPRestSDK.pdb

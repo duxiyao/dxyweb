@@ -1,0 +1,14 @@
+F:\BaiduYunDownload\dxyweb\dxy web\Test\bin\Debug\Test.exe
+F:\BaiduYunDownload\dxyweb\dxy web\Test\bin\Debug\Test.pdb
+F:\BaiduYunDownload\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+F:\BaiduYunDownload\dxyweb\dxy web\Test\obj\Debug\Test.exe
+F:\BaiduYunDownload\dxyweb\dxy web\Test\obj\Debug\Test.pdb
+F:\BaiduYunDownload\dxyweb\dxy web\Test\bin\Debug\Newtonsoft.Json.dll
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\obj\Debug\Test.exe
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\obj\Debug\Test.pdb
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\bin\Debug\Test.exe
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\bin\Debug\Test.pdb
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\bin\Debug\Newtonsoft.Json.dll
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\bin\Debug\Email.dll
+F:\BaiduYunDownload\dxyweb20150529\dxyweb20150527\dxyweb\dxy web\Test\bin\Debug\Email.pdb
