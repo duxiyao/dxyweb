@@ -21,7 +21,7 @@ using System.Xml;
 
 namespace CCPRestSDK
 {
-    enum EBodyType:uint
+    enum EBodyType : uint
     {
         EType_XML = 0,
         EType_JSON
@@ -116,7 +116,7 @@ namespace CCPRestSDK
         {
             string dllpath = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
             dllpath = dllpath.Substring(8, dllpath.Length - 8);    // 8是 file:// 的长度
-            return System.IO.Path.GetDirectoryName(dllpath)+"\\log.txt";
+            return System.IO.Path.GetDirectoryName(dllpath) + "\\log.txt";
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace CCPRestSDK
         /// </summary>
         /// <exception cref="Exception"></exception>
         /// <returns>包体内容</returns>
-        public Dictionary<string,object> QueryAccountInfo()
+        public Dictionary<string, object> QueryAccountInfo()
         {
             Dictionary<string, object> initError = paramCheckRest();
             if (initError != null)
@@ -146,7 +146,7 @@ namespace CCPRestSDK
                 string uriStr = string.Format("https://{0}:{1}/{2}/Accounts/{3}/AccountInfo?sig={4}", m_restAddress, m_restPort, softVer, m_mainAccount, sigstr);
                 Uri address = new Uri(uriStr);
 
-                WriteLog("QueryAccountInfo url = "+uriStr);
+                WriteLog("QueryAccountInfo url = " + uriStr);
 
                 // 创建网络请求  
                 HttpWebRequest request = WebRequest.Create(address) as HttpWebRequest;
@@ -195,7 +195,7 @@ namespace CCPRestSDK
                                     {
                                         data.Add(subItem.Name, subItem.InnerText);
                                     }
-                                    responseResult["data"] = new Dictionary<string, object> {{item.Name,data}};
+                                    responseResult["data"] = new Dictionary<string, object> { { item.Name, data } };
                                 }
                             }
                             return responseResult;
@@ -217,7 +217,7 @@ namespace CCPRestSDK
 
                         if (responseStr != null && responseStr.Length > 0)
                         {
-                            Dictionary<string, object> responseResult = new Dictionary<string, object> ();
+                            Dictionary<string, object> responseResult = new Dictionary<string, object>();
                             responseResult["resposeBody"] = responseStr;
                             return responseResult;
                         }
@@ -242,7 +242,7 @@ namespace CCPRestSDK
         /// <exception cref="ArgumentNullException">参数不能为空</exception>
         /// <exception cref="Exception"></exception>
         /// <returns>包体内容</returns>
-        public Dictionary<string, object> CreateSubAccount(string friendlyName) 
+        public Dictionary<string, object> CreateSubAccount(string friendlyName)
         {
             Dictionary<string, object> initError = paramCheckRest();
             if (initError != null)
@@ -260,7 +260,7 @@ namespace CCPRestSDK
                 return initError;
             }
 
-            if(friendlyName == null)
+            if (friendlyName == null)
                 throw new ArgumentNullException("friendlyName");
 
             try
@@ -272,7 +272,7 @@ namespace CCPRestSDK
                 string uriStr = string.Format("https://{0}:{1}/{2}/Accounts/{3}/SubAccounts?sig={4}", m_restAddress, m_restPort, softVer, m_mainAccount, sigstr);
                 Uri address = new Uri(uriStr);
 
-                WriteLog("CreateSubAccount url = " +uriStr);
+                WriteLog("CreateSubAccount url = " + uriStr);
 
                 // 创建网络请求  
                 HttpWebRequest request = WebRequest.Create(address) as HttpWebRequest;
@@ -313,7 +313,7 @@ namespace CCPRestSDK
 
                 byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
 
-                WriteLog("CreateSubAccount requestBody = " +data.ToString());
+                WriteLog("CreateSubAccount requestBody = " + data.ToString());
 
                 // 开始请求
                 using (Stream postStream = request.GetRequestStream())
@@ -365,7 +365,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -416,7 +416,7 @@ namespace CCPRestSDK
                 string uriStr = string.Format("https://{0}:{1}/{2}/Accounts/{3}/GetSubAccounts?sig={4}", m_restAddress, m_restPort, softVer, m_mainAccount, sigstr);
                 Uri address = new Uri(uriStr);
 
-                WriteLog("GetSubAccounts url = "+uriStr);
+                WriteLog("GetSubAccounts url = " + uriStr);
 
                 // 创建网络请求  
                 HttpWebRequest request = WebRequest.Create(address) as HttpWebRequest;
@@ -474,7 +474,7 @@ namespace CCPRestSDK
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     string responseStr = reader.ReadToEnd();
 
-                    WriteLog("GetSubAccounts responseBody = "+responseStr);
+                    WriteLog("GetSubAccounts responseBody = " + responseStr);
 
                     if (responseStr != null && responseStr.Length > 0)
                     {
@@ -616,7 +616,7 @@ namespace CCPRestSDK
 
                 byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
 
-                WriteLog("QuerySubAccount requestBody = "+data.ToString());
+                WriteLog("QuerySubAccount requestBody = " + data.ToString());
 
                 // 开始请求
                 using (Stream postStream = request.GetRequestStream())
@@ -668,7 +668,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -771,7 +771,7 @@ namespace CCPRestSDK
 
                 byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
 
-                WriteLog("SendSMS requestBody = "+data.ToString());
+                WriteLog("SendSMS requestBody = " + data.ToString());
 
                 // 开始请求
                 using (Stream postStream = request.GetRequestStream())
@@ -786,7 +786,7 @@ namespace CCPRestSDK
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     string responseStr = reader.ReadToEnd();
 
-                    WriteLog("SendSMS responseBody = "+responseStr);
+                    WriteLog("SendSMS responseBody = " + responseStr);
 
                     if (responseStr != null && responseStr.Length > 0)
                     {
@@ -823,7 +823,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -831,10 +831,10 @@ namespace CCPRestSDK
             }
             catch (Exception e)
             {
-                
+
                 throw e;
             }
-            
+
         }
 
         /// <summary>
@@ -910,7 +910,7 @@ namespace CCPRestSDK
                     bodyData.Append("<to>").Append(to).Append("</to>");
                     bodyData.Append("<appId>").Append(m_appId).Append("</appId>");
                     bodyData.Append("<templateId>").Append(templateId).Append("</templateId>");
-                    if (data != null && data.Length>0)
+                    if (data != null && data.Length > 0)
                     {
                         bodyData.Append("<datas>");
                         foreach (string item in data)
@@ -938,7 +938,7 @@ namespace CCPRestSDK
                         {
                             if (index == 0)
                             {
-                                bodyData.Append("\""+item+"\"");
+                                bodyData.Append("\"" + item + "\"");
                             }
                             else
                             {
@@ -1006,7 +1006,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -1182,7 +1182,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -1230,7 +1230,7 @@ namespace CCPRestSDK
                 throw new ArgumentNullException("to");
             }
 
-            if (mediaName==null && mediaTxt==null)
+            if (mediaName == null && mediaTxt == null)
             {
                 throw new ArgumentNullException("mediaName和mediaTxt同时为null");
             }
@@ -1272,7 +1272,7 @@ namespace CCPRestSDK
 
                     if (mediaName != null)
                     {
-                        data.Append("<mediaName type=\""+type+"\">").Append(mediaName).Append("</mediaName>");
+                        data.Append("<mediaName type=\"" + type + "\">").Append(mediaName).Append("</mediaName>");
                     }
 
                     if (mediaTxt != null)
@@ -1280,21 +1280,21 @@ namespace CCPRestSDK
                         data.Append("<mediaTxt>").Append(mediaTxt).Append("</mediaTxt>");
                     }
 
-                    if (displayNum!=null)
+                    if (displayNum != null)
                     {
                         data.Append("<displayNum>").Append(displayNum).Append("</displayNum>");
                     }
 
-                    if (playTimes!=null)
+                    if (playTimes != null)
                     {
                         data.Append("<playTimes>").Append(playTimes).Append("</playTimes>");
                     }
 
-                    if (respUrl!=null)
+                    if (respUrl != null)
                     {
                         data.Append("<respUrl>").Append(respUrl).Append("</respUrl>");
                     }
-                    
+
                     data.Append("</LandingCall>");
 
                 }
@@ -1388,7 +1388,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -1520,7 +1520,7 @@ namespace CCPRestSDK
                     data.Append("}");
 
                 }
-                
+
                 byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
 
                 WriteLog("VoiceVerify requestBody = " + data.ToString());
@@ -1575,7 +1575,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -1657,7 +1657,7 @@ namespace CCPRestSDK
                     data.Append(" userdata=\"" + userdata + "\"");
                 }
 
-                if (record != null && record=="true")
+                if (record != null && record == "true")
                 {
                     data.Append(" record=\"true\"");
                 }
@@ -1710,7 +1710,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         return responseResult;
                     }
                     return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" }, { "data", null } };
@@ -1862,7 +1862,7 @@ namespace CCPRestSDK
                             responseResult.Clear();
                             responseResult["resposeBody"] = responseStr;
                         }
-                        
+
                         if (retData.Count > 0)
                         {
                             responseResult["data"] = retData;
@@ -1878,6 +1878,103 @@ namespace CCPRestSDK
             }
         }
 
+
+        public Dictionary<string, object> PushMsg(string to, string body)
+        {
+            Dictionary<string, object> initError = paramCheckRest();
+            if (initError != null)
+            {
+                return initError;
+            }
+            initError = paramCheckMainAccount();
+            if (initError != null)
+            {
+                return initError;
+            }
+            initError = paramCheckAppId();
+            if (initError != null)
+            {
+                return initError;
+            }
+
+            if (to == null)
+                throw new ArgumentNullException("to");
+
+
+            try
+            {
+                string date = DateTime.Now.ToString("yyyyMMddhhmmss");
+
+                // 构建URL内容 
+                string sigstr = MD5Encrypt(m_mainAccount + m_mainToken + date);
+                string uriStr = string.Format("https://{0}:{1}/{2}/Accounts/{3}/IM/PushMsg?sig={4}", m_restAddress, m_restPort, softVer, m_mainAccount, sigstr);
+                Uri address = new Uri(uriStr);
+
+                WriteLog("PushMsg url = " + uriStr);
+
+                // 创建网络请求  
+                HttpWebRequest request = WebRequest.Create(address) as HttpWebRequest;
+                setCertificateValidationCallBack();
+
+                // 构建Head
+                request.Method = "POST";
+
+                Encoding myEncoding = Encoding.GetEncoding("utf-8");
+                byte[] myByte = myEncoding.GetBytes(m_mainAccount + ":" + date);
+                string authStr = Convert.ToBase64String(myByte);
+                request.Headers.Add("Authorization", authStr);
+
+
+                // 构建Body
+                StringBuilder data = new StringBuilder();
+
+
+                request.Accept = "application/json";
+                request.ContentType = "application/json;charset=utf-8";
+
+                data.Append("{");
+                data.Append("\"appId\":\"").Append(m_appId).Append("\"");
+                data.Append(",\"pushType\":").Append("1");
+                data.Append(",\"sender\":\"").Append("86920000000025").Append("\"");
+                data.Append(",\"receiver\":[\"").Append(to).Append("\"]");
+                data.Append(",\"msgType\":").Append("1");
+                data.Append(",\"msgContent\":\"").Append(body).Append("\"");
+                data.Append("}");
+
+
+                byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
+
+                WriteLog("PushMsg requestBody = " + data.ToString());
+
+                // 开始请求
+                using (Stream postStream = request.GetRequestStream())
+                {
+                    postStream.Write(byteData, 0, byteData.Length);
+                }
+
+                // 获取请求
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    // Get the response stream  
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    string responseStr = reader.ReadToEnd();
+
+                    WriteLog("PushMsg responseBody = " + responseStr);
+
+                    if (responseStr != null && responseStr.Length > 0)
+                    {
+                        Dictionary<string, object> responseResult = new Dictionary<string, object> { { "statusCode", "0" }, { "statusMsg", "成功" } };
+                        if (responseStr.Contains("000000"))
+                            return responseResult;
+                    }
+                    return new Dictionary<string, object> { { "statusCode", 172002 }, { "statusMsg", "无返回" } };
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         #region MD5 和 https交互函数定义
 
@@ -1982,7 +2079,7 @@ namespace CCPRestSDK
 
             if (statusCode != 0)
             {
-                return new Dictionary<string, object> { { "statusCode", statusCode+"" }, { "statusMsg", statusMsg }, { "data", null } };
+                return new Dictionary<string, object> { { "statusCode", statusCode + "" }, { "statusMsg", statusMsg }, { "data", null } };
             }
 
             return null;
