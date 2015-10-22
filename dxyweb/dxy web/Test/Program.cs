@@ -32,14 +32,17 @@ namespace Test
             //dic.Add("a", "b");
             //Console.Write(dic.Count);
 
-            string htmlContent = "http://www.doctorsclub.cn/HVerify.ashx?voip=";
-            EmailUtil.Email e = new EmailUtil.Email("18701416082@163.com", "sfgnuiqny!@#45");
-            e.AddTo("1589878326@qq.com");
-            e.SetSubject("thank you for register!!!");
-            e.AddHtmlContent(htmlContent);
-            e.SendDone += e_SendDone;
-            e.Send();
-            Console.ReadKey();
+            //string htmlContent = "http://www.doctorsclub.cn/HVerify.ashx?voip=";
+            //EmailUtil.Email e = new EmailUtil.Email("18701416082@163.com", "sfgnuiqny!@#45");
+            //e.AddTo("1589878326@qq.com");
+            //e.SetSubject("thank you for register!!!");
+            //e.AddHtmlContent(htmlContent);
+            //e.SendDone += e_SendDone;
+            //e.Send();
+            //Console.ReadKey();
+            CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
+            Dictionary<string, object> dic=sdk.VoiceVerify("15811488360", "abc123", "18701416082", "3", "");
+            string str = "";
         }
 
         static void e_SendDone(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CCPRestSDK\CCPRestSDK.csproj">
+      <Project>{91de7103-4a6c-4383-a9ac-d2f80efc41e8}</Project>
+      <Name>CCPRestSDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Email\Email.csproj">
       <Project>{b3f36d32-7bd9-46d2-a252-889fd76e0576}</Project>
       <Name>Email</Name>

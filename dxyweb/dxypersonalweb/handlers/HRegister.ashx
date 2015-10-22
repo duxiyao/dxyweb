@@ -8,9 +8,7 @@ public class HRegister : IHttpHandler {
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/plain";
         string email = context.Request.Form["email"];
-        string pwd = context.Request.Form["pwd"];
-        email = "15837125119@163.com";
-        pwd = "111111";
+        string pwd = context.Request.Form["pwd"]; 
         BLL.BLUserInfo bl = new BLL.BLUserInfo();
         BLL.Response res = bl.RegisterUser(email, pwd);
         if (res.Code == BLL.ResCode.SUCCESS)
