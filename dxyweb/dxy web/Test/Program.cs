@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
 
 namespace Test
 {
@@ -40,14 +41,127 @@ namespace Test
             //e.SendDone += e_SendDone;
             //e.Send();
             //Console.ReadKey();
-            CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
-            Dictionary<string, object> dic=sdk.VoiceVerify("15811488360", "abc123", "18701416082", "3", "");
-            string str = "";
+
+            //string hex = "E906F675D7606B89CEBC5DE06F4CEB9D";
+            //byte[] b = strToToHexByte(hex);
+
+            Console.WriteLine(AesDecrypt("e8GytNCe8Or6WNlcmpTePw==", "123456781234567a"));
+            //CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
+            //Dictionary<string, object> dic=sdk.VoiceVerify("15811488360", "abc123", "18701416082", "3", "");
+            //string str = "";
+
+
+            //string data = Encrypt("test");
+            //Console.WriteLine(data);
+            //Console.WriteLine(Decrypt(data));
+            Console.Read();
+        }
+
+        private static byte[] strToToHexByte(string hexString)
+        {
+            hexString = hexString.Replace(" ", "");
+            if ((hexString.Length % 2) != 0)
+                hexString += " ";
+            byte[] returnBytes = new byte[hexString.Length / 2];
+            for (int i = 0; i < returnBytes.Length; i++)
+                returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            return returnBytes;
         }
 
         static void e_SendDone(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             Console.Write("e_SendDone");
         }
+
+
+        public static string Encrypt(string toEncrypt)
+        {
+            byte[] keyArray = UTF8Encoding.UTF8.GetBytes("12345678901234567890123456789012");
+            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+
+            RijndaelManaged rDel = new RijndaelManaged();
+            rDel.Key = keyArray;
+            rDel.Mode = CipherMode.ECB;
+            rDel.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = rDel.CreateEncryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+
+        public static string Decrypt(string toDecrypt)
+        {
+            byte[] keyArray = UTF8Encoding.UTF8.GetBytes("123");
+            byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
+
+            RijndaelManaged rDel = new RijndaelManaged();
+            rDel.Key = keyArray;
+            rDel.Mode = CipherMode.ECB;
+            rDel.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = rDel.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return UTF8Encoding.UTF8.GetString(resultArray);
+        }
+
+        public static string Decrypt(byte[] toEncryptArray)
+        {
+            byte[] keyArray = UTF8Encoding.UTF8.GetBytes("123456781234567a");
+
+            RijndaelManaged rDel = new RijndaelManaged();
+            rDel.Key = keyArray;
+            rDel.Mode = CipherMode.ECB;
+            rDel.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = rDel.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return UTF8Encoding.UTF8.GetString(resultArray);
+        }
+
+        public static string AesEncrypt(string str, string key)
+        {
+            if (string.IsNullOrEmpty(str)) return null;
+            Byte[] toEncryptArray = Encoding.UTF8.GetBytes(str);
+
+            System.Security.Cryptography.RijndaelManaged rm = new System.Security.Cryptography.RijndaelManaged
+            {
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = System.Security.Cryptography.CipherMode.ECB,
+                Padding = System.Security.Cryptography.PaddingMode.PKCS7
+            };
+
+            System.Security.Cryptography.ICryptoTransform cTransform = rm.CreateEncryptor();
+            Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+        }
+
+        /// <summary>
+        ///  AES 解密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string AesDecrypt(string str, string key)
+        {
+            if (string.IsNullOrEmpty(str)) return null;
+            Byte[] toEncryptArray = Convert.FromBase64String(str);
+
+            System.Security.Cryptography.RijndaelManaged rm = new System.Security.Cryptography.RijndaelManaged
+            {
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = System.Security.Cryptography.CipherMode.ECB,
+                Padding = System.Security.Cryptography.PaddingMode.PKCS7
+            };
+
+            System.Security.Cryptography.ICryptoTransform cTransform = rm.CreateDecryptor();
+            Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+            return Encoding.UTF8.GetString(resultArray);
+        }
+
     }
 }
