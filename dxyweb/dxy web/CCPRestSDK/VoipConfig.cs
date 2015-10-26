@@ -6,7 +6,8 @@ namespace CCPRestSDK
 {
     public class VoipConfig
     {
-        public static string RESTADDRESS = "sandboxapp.cloopen.com";
+        //public static string RESTADDRESS = "sandboxapp.cloopen.com";
+        public static string RESTADDRESS = "app.cloopen.com";
         public static string RESTPORT = "8883";
         public static string ACCOUNTSID = "8a48b5514d32a2a8014d89972a303d91";
         public static string ACCOUNTTOKEN = "97b599886b6841c18c772040c960ea1e";

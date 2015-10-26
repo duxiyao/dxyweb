@@ -45,16 +45,16 @@ namespace Test
             //string hex = "E906F675D7606B89CEBC5DE06F4CEB9D";
             //byte[] b = strToToHexByte(hex);
 
-            Console.WriteLine(AesDecrypt("e8GytNCe8Or6WNlcmpTePw==", "123456781234567a"));
-            //CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
-            //Dictionary<string, object> dic=sdk.VoiceVerify("15811488360", "abc123", "18701416082", "3", "");
-            //string str = "";
+            //Console.WriteLine(AesDecrypt("e8GytNCe8Or6WNlcmpTePw==", "123456781234567a"));
+            CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
+            Dictionary<string, object> dic = sdk.VoiceVerify("15811488360", "abc123", "18701416082", "3", "");
+            string str = "";
 
 
             //string data = Encrypt("test");
             //Console.WriteLine(data);
             //Console.WriteLine(Decrypt(data));
-            Console.Read();
+            //Console.Read();
         }
 
         private static byte[] strToToHexByte(string hexString)

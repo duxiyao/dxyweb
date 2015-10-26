@@ -7,3 +7,8 @@ E:\dxy web\Email\bin\Debug\Email.pdb
 E:\dxy web\Email\obj\Debug\Email.csprojResolveAssemblyReference.cache
 E:\dxy web\Email\obj\Debug\Email.dll
 E:\dxy web\Email\obj\Debug\Email.pdb
+E:\study\dxyweb\dxyweb\dxy web\Email\bin\Debug\Email.dll
+E:\study\dxyweb\dxyweb\dxy web\Email\bin\Debug\Email.pdb
+E:\study\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.csprojResolveAssemblyReference.cache
+E:\study\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.dll
+E:\study\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.pdb

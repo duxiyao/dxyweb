@@ -26,3 +26,10 @@ E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\IAL\bin\Debug\M
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\IAL\obj\Debug\IAL.csprojResolveAssemblyReference.cache
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\IAL.dll
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\IAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.dll
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.pdb
+E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.csprojResolveAssemblyReference.cache
+E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
+E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb

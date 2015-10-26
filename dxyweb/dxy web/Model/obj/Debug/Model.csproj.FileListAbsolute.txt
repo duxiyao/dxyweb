@@ -17,3 +17,7 @@ E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\Model\bin\Debug
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\Model\obj\Debug\Model.dll
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\Model\obj\Debug\Model.pdb
+E:\study\dxyweb\dxyweb\dxy web\Model\bin\Debug\Model.dll
+E:\study\dxyweb\dxyweb\dxy web\Model\bin\Debug\Model.pdb
+E:\study\dxyweb\dxyweb\dxy web\Model\obj\Debug\Model.dll
+E:\study\dxyweb\dxyweb\dxy web\Model\obj\Debug\Model.pdb

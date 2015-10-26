@@ -109,7 +109,7 @@ namespace EmailUtil
          
         private bool IsEmail(string email)
         {
-            return System.Text.RegularExpressions.Regex.IsMatch("373071116@qq.com", @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            return System.Text.RegularExpressions.Regex.IsMatch(email, @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
         }
 
         private bool IsNullOrEmp(string str)

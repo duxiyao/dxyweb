@@ -34,3 +34,12 @@ E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\DAL\bin\Debug\M
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\DAL\obj\Debug\DAL.dll
 E:\BaiduYunDownload\dxyweb20150703\dxyweb20150703\dxyweb\dxy web\DAL\obj\Debug\DAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\DAL.dll
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\DAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\IAL.dll
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\Model.dll
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\IAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\Model.pdb
+E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.dll
+E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.pdb

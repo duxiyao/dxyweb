@@ -48,6 +48,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="TabTmp.cs" />
+    <Compile Include="ts\DaoUserInfo.cs" />
+    <Compile Include="ts\DaoVerifyCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IAL\IAL.csproj">

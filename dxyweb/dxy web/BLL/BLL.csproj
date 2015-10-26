@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResCode.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="ts\BLUserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCPRestSDK\CCPRestSDK.csproj">
