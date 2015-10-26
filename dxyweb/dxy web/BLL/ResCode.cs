@@ -44,7 +44,22 @@ namespace BLL
         /// <summary>
         /// 生成验证码错误
         /// </summary>
-        public static int ERRGENERATEVERIFYCODE = 6;
+        public static int ERRGENERATEVERIFYCODE = 7;
         public static string STRERRGENERATEVERIFYCODE = "生成验证码错误!";
+        /// <summary>
+        /// 云通讯平台生成验证码错误
+        /// </summary>
+        public static int ERRYUNTONGXUNGENERATECODE = 8;
+        public static string STRERRYUNTONGXUNGENERATECODE = "云通讯平台生成验证码错误!";
+        /// <summary>
+        /// 注册验证码不正确
+        /// </summary>
+        public static int ERRVERIFYCODE = 9;
+        public static string STRERRVERIFYCODE = "注册验证码不正确!";
+        /// <summary>
+        /// 注册写入数据库数据错误
+        /// </summary>
+        public static int ERRREGISTERWRITEDB = 10;
+        public static string STRERRREGISTERWRITEDB = "注册写入数据库数据错误!";
     }
 }

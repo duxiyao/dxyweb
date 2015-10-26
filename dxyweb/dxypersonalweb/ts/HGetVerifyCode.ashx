@@ -18,7 +18,7 @@ public class HGetVerifyCode : IHttpHandler
 
         if (RegexUtil.IsPhone(phone))
         {
-            if (IsAesCodeRight(time, aesCode))
+            if (IsAesCodeRight(time, imei, aesCode))
             {
                 res = new BLL.Response();
                 BLL.ts.BLUserInfo bl = new BLL.ts.BLUserInfo();
@@ -30,14 +30,32 @@ public class HGetVerifyCode : IHttpHandler
                 }
                 else
                 {
-                    if (dao.IsCanSendCode(phone,aesCode))
+                    if (dao.IsCanSendCode(phone, aesCode))
                     {
                         DAL.ts.DaoVerifyCode daoCode = new DAL.ts.DaoVerifyCode();
-                        string verifyCode=daoCode.Insert(phone, imei, aesCode);
+                        string verifyCode = daoCode.Insert(phone, imei, aesCode);
                         if (verifyCode != null && verifyCode.Length > 0)
                         {
-                            res.Code = BLL.ResCode.SUCCESS;
-                            res.Data = verifyCode;
+                            CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
+                            System.Collections.Generic.Dictionary<string, object> dic = sdk.VoiceVerify(phone, verifyCode, "18701416082", "3", "");
+                            try
+                            {
+                                if (dic["statusCode"] == "000000")
+                                {
+                                    res.Code = BLL.ResCode.SUCCESS;
+                                    res.Data = verifyCode;
+                                }
+                                else
+                                {
+                                    res.Code = BLL.ResCode.ERRYUNTONGXUNGENERATECODE;
+                                    res.Msg = BLL.ResCode.STRERRYUNTONGXUNGENERATECODE + " " + dic["statusMsg"];
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                res.Code = BLL.ResCode.ERRYUNTONGXUNGENERATECODE;
+                                res.Msg = BLL.ResCode.STRERRYUNTONGXUNGENERATECODE + " " + e.ToString();
+                            }
                         }
                         else
                         {
@@ -68,9 +86,16 @@ public class HGetVerifyCode : IHttpHandler
         context.Response.Write(res.ToJson());
     }
 
-    private bool IsAesCodeRight(string time, string aesCode)
+    private bool IsAesCodeRight(string time, string imei, string aesCode)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return (aesCode.Equals(MM.AesDecrypt(imei + time)));
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     public bool IsReusable

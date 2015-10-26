@@ -3,7 +3,8 @@
 using System;
 using System.Web;
 
-public class HRegister : IHttpHandler {
+public class HRegister : IHttpHandler
+{
 
     public void ProcessRequest(HttpContext context)
     {
@@ -12,19 +13,14 @@ public class HRegister : IHttpHandler {
         string pwd = context.Request.Form["pwd"];
         string verifyCode = context.Request.Form["verifyCode"];
         BLL.ts.BLUserInfo bl = new BLL.ts.BLUserInfo();
-        
-        BLL.Response res = bl.RegisterUser(phone, pwd);
-        if (res.Code == BLL.ResCode.SUCCESS)
-        {
-            //string voip = bl.GenerateVoipInfo(phone);
-            //send code
-            //res = bl.QueryUser(phone, pwd);
-        }
+        BLL.Response res = bl.RegisterUserByPhone(phone, pwd, verifyCode);
         context.Response.Write(res.ToJson());
     }
- 
-    public bool IsReusable {
-        get {
+
+    public bool IsReusable
+    {
+        get
+        {
             return false;
         }
     }

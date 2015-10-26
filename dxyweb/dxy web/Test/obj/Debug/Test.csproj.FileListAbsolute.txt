@@ -22,3 +22,13 @@ E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\Newtonsoft.Json.dll
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\CCPRestSDK.pdb
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\Email.pdb
 E:\study\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.exe
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Test.exe
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Test.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\CCPRestSDK.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Email.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\CCPRestSDK.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Email.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

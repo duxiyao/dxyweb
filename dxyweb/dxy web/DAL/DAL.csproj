@@ -50,6 +50,7 @@
     <Compile Include="TabTmp.cs" />
     <Compile Include="ts\DaoUserInfo.cs" />
     <Compile Include="ts\DaoVerifyCode.cs" />
+    <Compile Include="ts\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IAL\IAL.csproj">

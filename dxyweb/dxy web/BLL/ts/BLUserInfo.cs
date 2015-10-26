@@ -8,22 +8,29 @@ namespace BLL.ts
 {
     public class BLUserInfo
     {
-        public Response RegisterUser(string phone, string pwd)
+        public Response RegisterUserByPhone(string phone, string pwd,string verifyCode)
         {
             Response res = new Response();
-            DaoUserInfo dao = new DaoUserInfo();
-            if (dao.ExistsByPhone(phone))
+            DaoVerifyCode dao = new DaoVerifyCode();
+            if (dao.Exists(phone, verifyCode))
             {
-                res.Code = ResCode.USERALREADYEXISTS;
-                res.Msg = ResCode.STRUSERALREADYEXISTS;
-            }
-            else
-            {
-                if (dao.Insert(phone, pwd))
+                DaoUserInfo daou = new DaoUserInfo();
+                if (daou.Insert(phone, pwd))
                 {
                     res.Code = ResCode.SUCCESS;
                 }
+                else
+                {
+                    res.Code = ResCode.ERRREGISTERWRITEDB;
+                    res.Msg = ResCode.STRERRREGISTERWRITEDB;
+                }
             }
+            else
+            {
+                res.Code = ResCode.ERRVERIFYCODE;
+                res.Msg = ResCode.STRERRVERIFYCODE;
+            }
+             
             return res;
         }
     }

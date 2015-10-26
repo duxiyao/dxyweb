@@ -11,7 +11,7 @@ namespace DAL.ts
     {
         private string GenerateCode()
         {
-            throw new NotImplementedException();
+            return Util.GenerateRandomNumber(4);
         }
 
         public string Insert(string phone, string imei, string aesCode)
@@ -28,12 +28,20 @@ namespace DAL.ts
             return null;
         }
 
+        public bool Exists(string phone, string verifyCode)
+        {
+            string sql = "select count(*) from tab_verify_request where phone=? and verifyCode=?";
+            OleDbParameter[] oleDbParameters = { new OleDbParameter("@phone", phone), new OleDbParameter("@verifyCode", verifyCode) };
+            return SQLHelper.Exists(sql, oleDbParameters);
+        }
+
         public bool Exists(string aesCode)
         {
             string sql = "select count(*) from tab_verify_request where aesCode =?";
             OleDbParameter[] oleDbParameters = { new OleDbParameter("@aesCode", aesCode) };
             return SQLHelper.Exists(sql, oleDbParameters);
         }
+
         public bool ExistsTwoToday(string phone)
         {
             string sql = "select count(*) from tab_verify_request where DateDiff(dd,AddDate,getdate())=0 and phone =?";
