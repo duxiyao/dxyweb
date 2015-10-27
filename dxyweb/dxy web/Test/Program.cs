@@ -47,8 +47,8 @@ namespace Test
 
             //Console.WriteLine(AesDecrypt("e8GytNCe8Or6WNlcmpTePw==", "123456781234567a"));
             //CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
-            //Dictionary<string, object> dic = sdk.VoiceVerify("15701282815", "ilovezjy1314", "18701416082", "3", "");
-            string s = GenerateRandomNumber(4).ToLower();
+            //Dictionary<string, object> dic = sdk.VoiceVerify("18701416082", "ilovezjy", "18701416082", "3", "");
+            //string s = GenerateRandomNumber(4).ToLower();
 
             string str = "";
 

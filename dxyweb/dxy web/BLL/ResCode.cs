@@ -61,5 +61,15 @@ namespace BLL
         /// </summary>
         public static int ERRREGISTERWRITEDB = 10;
         public static string STRERRREGISTERWRITEDB = "注册写入数据库数据错误!";
+        /// <summary>
+        /// 用户名密码错误
+        /// </summary>
+        public static int ERRACCOUNTPWD= 11;
+        public static string STRERRACCOUNTPWD = "用户名密码错误!";
+        /// <summary>
+        /// voip生成错误
+        /// </summary>
+        public static int ERRGENERATEVOIP = 11;
+        public static string STRERRGENERATEVOIP = "voip生成错误!";
     }
 }

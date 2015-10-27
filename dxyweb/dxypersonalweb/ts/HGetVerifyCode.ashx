@@ -9,6 +9,8 @@ public class HGetVerifyCode : IHttpHandler
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "text/plain";
+        if (!MMUtil.IsCanDeal(context))
+            return;
         BLL.Response res = null;
         string phone = context.Request.Form["phone"];
         string pwd = context.Request.Form["pwd"];
@@ -18,7 +20,7 @@ public class HGetVerifyCode : IHttpHandler
 
         if (RegexUtil.IsPhone(phone))
         {
-            if (IsAesCodeRight(time, imei, aesCode))
+            if (MMUtil.IsAesCodeRight(time, imei, aesCode))
             {
                 res = new BLL.Response();
                 BLL.ts.BLUserInfo bl = new BLL.ts.BLUserInfo();
@@ -84,19 +86,7 @@ public class HGetVerifyCode : IHttpHandler
             res.Msg = BLL.ResCode.STRILLEGALPHONENUM;
         }
         context.Response.Write(res.ToJson());
-    }
-
-    private bool IsAesCodeRight(string time, string imei, string aesCode)
-    {
-        try
-        {
-            return (aesCode.Equals(MM.AesDecrypt(imei + time)));
-        }
-        catch (Exception)
-        {
-            return false;
-        }
-    }
+    } 
 
     public bool IsReusable
     {
