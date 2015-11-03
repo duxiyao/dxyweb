@@ -45,7 +45,7 @@ public class HGetVerifyCode : IHttpHandler
                                 if (dic["statusCode"] == "000000")
                                 {
                                     res.Code = BLL.ResCode.SUCCESS;
-                                    res.Data = verifyCode;
+                                    //res.Data = verifyCode;
                                 }
                                 else
                                 {

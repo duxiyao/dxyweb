@@ -50,6 +50,8 @@ namespace Test
             //Dictionary<string, object> dic = sdk.VoiceVerify("18701416082", "ilovezjy", "18701416082", "3", "");
             //string s = GenerateRandomNumber(4).ToLower();
 
+            string s = AesEncrypt("1870141608215455", "sfgnuiqnyzjy1314");
+            string s1 = AesDecrypt(s, "sfgnuiqnyzjy1314");
             string str = "";
 
 

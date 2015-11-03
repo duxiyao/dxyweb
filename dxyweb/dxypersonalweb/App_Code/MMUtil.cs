@@ -27,7 +27,7 @@ public class MMUtil
     {
         try
         {
-            return (aesCode.Equals(MM.AesDecrypt(imei + time)));
+            return ((imei + time).Equals(MM.AesDecrypt(aesCode)));
         }
         catch (Exception)
         {

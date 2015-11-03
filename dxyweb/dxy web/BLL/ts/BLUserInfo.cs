@@ -60,6 +60,7 @@ namespace BLL.ts
                     if (voip != null && voip.Length > 0)
                     {
                         res.Code = ResCode.SUCCESS;
+                        res.Data = daou.SelectByPhonePwd(phone, pwd);
                     }
                     else
                     {
