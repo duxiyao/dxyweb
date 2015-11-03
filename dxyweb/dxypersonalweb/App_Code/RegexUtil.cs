@@ -15,6 +15,6 @@ public class RegexUtil
 
     public static bool IsPhone(string phone)
     {
-        return System.Text.RegularExpressions.Regex.IsMatch(phone, @"(^189\d{8}$)|(^13\d{9}$)|(^15\d{9}$)");
+        return System.Text.RegularExpressions.Regex.IsMatch(phone, @"^1(3|4|5|7|8){1}\d{9}");
     }
 }

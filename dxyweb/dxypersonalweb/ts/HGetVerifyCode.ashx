@@ -35,14 +35,14 @@ public class HGetVerifyCode : IHttpHandler
                     if (dao.IsCanSendCode(phone, aesCode))
                     {
                         DAL.ts.DaoVerifyCode daoCode = new DAL.ts.DaoVerifyCode();
-                        string verifyCode = daoCode.Insert(phone, imei, aesCode);
+                        string verifyCode = daoCode.Insert(phone, imei,time, aesCode);
                         if (verifyCode != null && verifyCode.Length > 0)
                         {
                             CCPRestSDK.CCPRestSDK sdk = CCPRestSDK.VoipConfig.getInitSDK();
                             System.Collections.Generic.Dictionary<string, object> dic = sdk.VoiceVerify(phone, verifyCode, "18701416082", "3", "");
                             try
                             {
-                                if (dic["statusCode"] == "000000")
+                                if (dic["statusCode"].Equals("000000"))
                                 {
                                     res.Code = BLL.ResCode.SUCCESS;
                                     //res.Data = verifyCode;

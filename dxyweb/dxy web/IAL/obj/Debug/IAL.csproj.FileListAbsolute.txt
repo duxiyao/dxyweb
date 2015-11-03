@@ -33,3 +33,10 @@ E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.pdb
 E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.csprojResolveAssemblyReference.cache
 E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
 E:\study\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\IAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\IAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb

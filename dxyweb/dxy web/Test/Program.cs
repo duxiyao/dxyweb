@@ -50,17 +50,24 @@ namespace Test
             //Dictionary<string, object> dic = sdk.VoiceVerify("18701416082", "ilovezjy", "18701416082", "3", "");
             //string s = GenerateRandomNumber(4).ToLower();
 
-            string s = AesEncrypt("1870141608215455", "sfgnuiqnyzjy1314");
-            string s1 = AesDecrypt(s, "sfgnuiqnyzjy1314");
-            string str = "";
+            //string s = AesEncrypt("1870141608215455", "sfgnuiqnyzjy1314");
+            //string s1 = AesDecrypt(s, "sfgnuiqnyzjy1314");
+            //string str = "";
 
 
             //string data = Encrypt("test");
             //Console.WriteLine(data);
             //Console.WriteLine(Decrypt(data));
-            //Console.Read();
+            //Console.Write(IsPhone("15701282815"));
+            //Console.Write(IsPhone("18701416082")); 
+            DateTime dt = DateTime.Parse("2015-11-04 00:45:46");
+            string s = dt.ToString();
+            Console.Read();
         }
-
+        public static bool IsPhone(string phone)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(phone, @"^1(3|4|5|7|8){1}\d{9}");
+        }
         private static char[] constant =   
       {   
         '0','1','2','3','4','5','6','7','8','9',  

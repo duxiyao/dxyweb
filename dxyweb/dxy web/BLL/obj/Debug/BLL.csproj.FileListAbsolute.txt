@@ -65,3 +65,17 @@ E:\study\dxyweb\dxyweb\dxy web\BLL\bin\Debug\Model.pdb
 E:\study\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\study\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.dll
 E:\study\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\BLL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\BLL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\CCPRestSDK.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\DAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\IAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\Model.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\CCPRestSDK.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\DAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\IAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\Model.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.pdb

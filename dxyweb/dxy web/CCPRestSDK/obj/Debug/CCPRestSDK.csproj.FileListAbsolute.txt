@@ -8,3 +8,8 @@ E:\study\dxyweb\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.dll
 E:\study\dxyweb\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.pdb
 E:\study\dxyweb\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.dll
 E:\study\dxyweb\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\CCPRestSDK\bin\Debug\CCPRestSDK.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\CCPRestSDK\obj\Debug\CCPRestSDK.csprojResolveAssemblyReference.cache

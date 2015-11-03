@@ -43,3 +43,12 @@ E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\Model.pdb
 E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.dll
 E:\study\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\DAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\DAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\IAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\Model.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\IAL.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\Model.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.pdb
