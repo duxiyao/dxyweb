@@ -25,4 +25,3 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Model\bin\Debug\Model.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Model\bin\Debug\Model.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Model\obj\Debug\Model.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Model\obj\Debug\Model.pdb
-E:\study\dxyweb\dxyweb\dxy web\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

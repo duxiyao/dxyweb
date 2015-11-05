@@ -17,6 +17,7 @@ public class TestHandler : IHttpHandler
             System.Web.HttpPostedFile postedFile = fileList[0];
             string fileName = postedFile.FileName;
             string Imagetype = fileName.Substring(fileName.LastIndexOf("."));
+            Imagetype = Imagetype.ToLower();
             if (Imagetype == ".jpg" || Imagetype == ".bmp" || Imagetype == ".gif" || Imagetype == ".png" || Imagetype == ".jpeg")
             {
                 string root = context.Server.MapPath("~/ts/imgs/heads/");  //图片保存路径

@@ -96,6 +96,52 @@ namespace DAL.ts
             return null;
         }
 
+        public bool UpdateUserInfoKV(string id, Dictionary<string, string> p)
+        {
+            if (p == null || p.Count == 0)
+                return false;
+            try
+            {
+                string sqlPre = "update tab_ts_user_basic_info set ";
+                string s = "";
+                
+                List<OleDbParameter> l = new List<OleDbParameter>();
+                foreach (string k in p.Keys)
+                {
+                    l.Add(new OleDbParameter(k, p[k]));
+                    s = s + k + "=? , ";
+                }
+                string sql = sqlPre + s + " updateTime=? where id=?";
+                l.Add(new OleDbParameter("@updateTime", DateTime.Now));
+                l.Add(new OleDbParameter("@id", id));
+                if (SQLHelper.ExecuteSql(sql, l.ToArray()) > 0)
+                    return true;
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateUserInfoKV(string id, string k, string v)
+        {
+            try
+            {
+                string sql = "update tab_ts_user_basic_info set " + k + "=? , updateTime=? where id=?";
+                OleDbParameter[] oleDbParameters = { new OleDbParameter(k,v),
+                                               new OleDbParameter("@updateTime",DateTime.Now),
+                                               new OleDbParameter("@id",id)};
+                if (SQLHelper.ExecuteSql(sql, oleDbParameters) > 0)
+                    return true;
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        } 
+
         public bool Insert(string phone, string pwd)
         {
             OleDbParameter pVerify = new OleDbParameter("@verify", OleDbType.Integer);
