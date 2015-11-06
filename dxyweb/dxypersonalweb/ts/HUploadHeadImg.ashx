@@ -23,7 +23,8 @@ public class TestHandler : IHttpHandler
             if (imagetype == ".jpg" || imagetype == ".bmp" || imagetype == ".gif" || imagetype == ".png" || imagetype == ".jpeg")
             {
                 string root = context.Server.MapPath("~" + serverRoot);  //图片保存路径
-                string filePathNew = root + DateTime.Now.ToString("yyyyMMddhhmmss") + imagetype;
+                string fileNameNew=DateTime.Now.ToString("yyyyMMddhhmmss") + imagetype;
+                string filePathNew = root + fileNameNew;
                 //if (!System.IO.File.Exists(filePathNew))
                 //{
                 //    System.IO.File.Create(filePathNew);
@@ -31,7 +32,7 @@ public class TestHandler : IHttpHandler
                 postedFile.SaveAs(filePathNew); 
 
                 DAL.ts.DaoUserInfo dao = new DAL.ts.DaoUserInfo();
-                string url = "http://" + System.Web.HttpContext.Current.Request.Url.Host + serverRoot + filePathNew;
+                string url = "http://" + System.Web.HttpContext.Current.Request.Url.Host + serverRoot + fileNameNew;
                 BLL.Response res = new BLL.Response();
                 if (dao.UpdateUserInfoKV(id, "photoUrl",url))
                 {
