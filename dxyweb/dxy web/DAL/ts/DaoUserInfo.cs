@@ -96,13 +96,38 @@ namespace DAL.ts
             return null;
         }
 
-        public bool UpdateUserInfoKV(string id, Dictionary<string, string> p)
+        /// <summary>
+        /// 根据终端提交的k v更新数据库。k必须为表中字段
+        /// </summary>
+        /// <param name="inttype">选择存入哪个表 0 基础表 ; 1 学生附加表 ; 2 老师附加表</param>
+        /// <param name="id"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public bool UpdateUserInfoKV(int intType,string id, Dictionary<string, string> p)
         {
             if (p == null || p.Count == 0)
                 return false;
             try
             {
-                string sqlPre = "update tab_ts_user_basic_info set ";
+                string sqlPre = "";
+                string surffix = "";
+                switch (intType)
+                {
+                    case 0:
+                        sqlPre = "update a set ";
+                        surffix = " from tab_ts_user_basic_info a where id=? ";
+                        break;
+                    case 1:
+                        sqlPre = "update b set ";
+                        surffix = " from tab_ts_user_basic_info a,tab_ts_student_info b where a.id=b.ubId and a.id=?";
+                        break;
+                    case 2:
+                        sqlPre = "update b set ";
+                        surffix = " from tab_ts_user_basic_info a,tab_ts_teacher_info b where a.id=b.ubId and a.id=?";
+                        break;
+                    default:
+                        break;
+                }
                 string s = "";
                 
                 List<OleDbParameter> l = new List<OleDbParameter>();
@@ -111,9 +136,12 @@ namespace DAL.ts
                     l.Add(new OleDbParameter(k, p[k]));
                     s = s + k + "=? , ";
                 }
-                string sql = sqlPre + s + " updateTime=? where id=?";
+                string sql = sqlPre + s + " updateTime=? " + surffix;
+
+                
+                
                 l.Add(new OleDbParameter("@updateTime", DateTime.Now));
-                l.Add(new OleDbParameter("@id", id));
+                l.Add(new OleDbParameter("@a.id", id));
                 if (SQLHelper.ExecuteSql(sql, l.ToArray()) > 0)
                     return true;
                 return false;
