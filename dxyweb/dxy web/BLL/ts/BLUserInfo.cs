@@ -54,6 +54,12 @@ namespace BLL.ts
             if (dao.Exists(phone, verifyCode))
             {
                 DaoUserInfo daou = new DaoUserInfo();
+                if (daou.ExistsByPhone(phone))
+                {
+                    res.Code = ResCode.USERALREADYEXISTS;
+                    res.Msg = ResCode.STRUSERALREADYEXISTS;
+                    return res;
+                }
                 if (daou.Insert(phone, pwd))
                 {                    
                     string voip = GenerateVoipInfo(phone);

@@ -115,7 +115,7 @@ namespace DAL.ts
                 {
                     case 0:
                         sqlPre = "update a set ";
-                        surffix = " from tab_ts_user_basic_info a where id=? ";
+                        surffix = " from tab_ts_user_basic_info a where a.id=? ";
                         break;
                     case 1:
                         sqlPre = "update b set ";
@@ -136,11 +136,9 @@ namespace DAL.ts
                     l.Add(new OleDbParameter(k, p[k]));
                     s = s + k + "=? , ";
                 }
-                string sql = sqlPre + s + " updateTime=? " + surffix;
-
-                
-                
-                l.Add(new OleDbParameter("@updateTime", DateTime.Now));
+                string sql = sqlPre + s.Substring(0,s.Length-2)  + surffix;
+                            
+                 
                 l.Add(new OleDbParameter("@a.id", id));
                 if (SQLHelper.ExecuteSql(sql, l.ToArray()) > 0)
                     return true;
