@@ -60,8 +60,16 @@ namespace Test
             //Console.WriteLine(Decrypt(data));
             //Console.Write(IsPhone("15701282815"));
             //Console.Write(IsPhone("18701416082")); 
-            DateTime dt = DateTime.Parse("2015-11-04 00:45:46");
-            string s = dt.ToString();
+            
+            //DateTime dt = DateTime.Parse("2015-11-04 00:45:46");
+            //string s = dt.ToString();
+
+            int i = 10;
+            string s = Convert.ToString(i, 2);
+            Console.WriteLine(s);
+
+            int a = Convert.ToInt32(s, 2);
+            Console.WriteLine(a);
             Console.Read();
         }
         public static bool IsPhone(string phone)
