@@ -12,6 +12,9 @@ public class TestHandler : IHttpHandler
         {
 
             context.Response.ContentType = "text/plain";
+            string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
+            string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
+            
             object req = context.Request;
             HttpFileCollection fileList = context.Request.Files;// System.Web.HttpContext.Current.Request.Files;
             System.Web.HttpPostedFile postedFile = fileList[0];

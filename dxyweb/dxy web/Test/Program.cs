@@ -71,10 +71,16 @@ namespace Test
             //int a = Convert.ToInt32(s, 2);
             //Console.WriteLine(a);
 
-            string url="http://api.map.baidu.com/geodata/v3/geotable/list";
-            string p="ak=FF220617922875eb62a6d9db2c7dd479";
-            string ret=HttpReqp.HttpGet(url, p);
-            Console.WriteLine(Uri.UnescapeDataString(ret));
+            string content = "\u6210\u529f";
+            string result = Uri.UnescapeDataString(content);
+            Console.WriteLine(result);//操作成功
+
+            string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
+            string p = "ak=FF220617922875eb62a6d9db2c7dd479";
+            string ret = HttpReqp.HttpGet(url, p);
+            //string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
+
+            //Console.WriteLine(Uri.UnescapeDataString(ret));
             Console.Read();
         }
         public static bool IsPhone(string phone)
