@@ -64,12 +64,17 @@ namespace Test
             //DateTime dt = DateTime.Parse("2015-11-04 00:45:46");
             //string s = dt.ToString();
 
-            int i = 10;
-            string s = Convert.ToString(i, 2);
-            Console.WriteLine(s);
+            //int i = 10;
+            //string s = Convert.ToString(i, 2);
+            //Console.WriteLine(s);
 
-            int a = Convert.ToInt32(s, 2);
-            Console.WriteLine(a);
+            //int a = Convert.ToInt32(s, 2);
+            //Console.WriteLine(a);
+
+            string url="http://api.map.baidu.com/geodata/v3/geotable/list";
+            string p="ak=FF220617922875eb62a6d9db2c7dd479";
+            string ret=HttpReqp.HttpGet(url, p);
+            Console.WriteLine(Uri.UnescapeDataString(ret));
             Console.Read();
         }
         public static bool IsPhone(string phone)
