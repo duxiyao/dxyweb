@@ -45,6 +45,7 @@
     <Compile Include="DaoLeaveMsg.cs" />
     <Compile Include="DaoReview.cs" />
     <Compile Include="DaoUserInfo.cs" />
+    <Compile Include="DBUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="TabTmp.cs" />

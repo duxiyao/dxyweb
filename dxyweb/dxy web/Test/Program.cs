@@ -10,8 +10,30 @@ namespace Test
 {
     class Program
     {
+        static void testSqllib(){
+            //UserInf userss = new UserInf();
+            //userss.U_UserID = "aw12311";
+            //userss.U_Psw = "123";
+            //userss.U_UserName = "aw";
+            //userss.U_City = "武汉";
+            //userss.U_Popedom = 1;
+            //userss.U_Sex = 1;
+            //userss.U_BirthTime = 19900114;
+            //userss.U_AddDataTime = DateTime.Now;
+
+            //DateIsTableAttribute<UserInf> t = new DateIsTableAttribute<UserInf>();
+
+            //Response.Write(" </br>" + t.insertDate(userss));  
+            //new SQLManager().GetList<UserInf>();
+
+            SqlLib.PE_Files pef = new SqlLib.PE_Files();
+            new SqlLib.SQLManager().Insert(pef);
+            SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
+        }
+
         static void Main(string[] args)
         {
+            testSqllib();
             //Regex reg = new Regex(@"url\((['""]?)(.+[^'""])\1\)");  //注意里面的引号 要用双引号表示，而不是用反斜杠
             ////Console.WriteLine(reg.Match(@"{background-image:url(//ssl.gstatic.com/ui/v1/menu/checkmark.png);backgro")); 
             ////输出 url(//ssl.gstatic.com/ui/v1/menu/checkmark.png)
@@ -71,17 +93,17 @@ namespace Test
             //int a = Convert.ToInt32(s, 2);
             //Console.WriteLine(a);
 
-            string content = "\u6210\u529f";
-            string result = Uri.UnescapeDataString(content);
-            Console.WriteLine(result);//操作成功
+            //string content = "\u6210\u529f";
+            //string result = Uri.UnescapeDataString(content);
+            //Console.WriteLine(result);//操作成功
 
-            string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
-            string p = "ak=FF220617922875eb62a6d9db2c7dd479";
-            string ret = HttpReqp.HttpGet(url, p);
-            //string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
+            //string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
+            //string p = "ak=FF220617922875eb62a6d9db2c7dd479";
+            //string ret = HttpReqp.HttpGet(url, p);
+            ////string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
 
-            //Console.WriteLine(Uri.UnescapeDataString(ret));
-            Console.Read();
+            ////Console.WriteLine(Uri.UnescapeDataString(ret));
+            //Console.Read();
         }
         public static bool IsPhone(string phone)
         {

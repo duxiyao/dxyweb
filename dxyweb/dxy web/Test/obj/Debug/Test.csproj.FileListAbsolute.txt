@@ -32,3 +32,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Newtonsoft.Json.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\CCPRestSDK.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Email.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.dll
+E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.pdb

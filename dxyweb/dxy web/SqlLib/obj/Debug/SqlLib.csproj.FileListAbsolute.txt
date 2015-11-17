@@ -1,0 +1,4 @@
+E:\study\dxyweb\dxyweb\dxy web\SqlLib\bin\Debug\SqlLib.dll
+E:\study\dxyweb\dxyweb\dxy web\SqlLib\bin\Debug\SqlLib.pdb
+E:\study\dxyweb\dxyweb\dxy web\SqlLib\obj\Debug\SqlLib.dll
+E:\study\dxyweb\dxyweb\dxy web\SqlLib\obj\Debug\SqlLib.pdb
