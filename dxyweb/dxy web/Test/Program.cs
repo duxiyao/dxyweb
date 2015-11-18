@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
+using SqlLib;
 
 namespace Test
 {
@@ -26,9 +27,11 @@ namespace Test
             //Response.Write(" </br>" + t.insertDate(userss));  
             //new SQLManager().GetList<UserInf>();
 
-            SqlLib.PE_Files pef = new SqlLib.PE_Files();
-            new SqlLib.SQLManager().Insert(pef);
-            SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
+            //SqlLib.PE_Files pef = new SqlLib.PE_Files();
+            //new SqlLib.SQLManager().Insert(pef);
+            //SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
+            User u = new User();
+            new TableInfo(u);
         }
 
         static void Main(string[] args)
