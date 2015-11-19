@@ -8,12 +8,13 @@ namespace SqlLib
     public class TableInfo
     {
         private object obj;
+        public string TableName { get; set; }
         public ColumnInfo ColInfo { get; set; }
         public TableInfo(object obj)
         {
             this.obj = obj;
             ColInfo = new ColumnInfo(obj);
-            string str = "";
+            TableName = ClsUtil.GetTableName(obj);
         }
     }
 

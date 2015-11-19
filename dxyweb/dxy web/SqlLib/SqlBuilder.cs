@@ -11,20 +11,25 @@ namespace SqlLib
 
         public static string BuildInsert(object obj)
         {
-            string tabName = ClsUtil.GetTableName(obj);
-            Type type = obj.GetType();
-            PropertyInfo[] myPropertyInfo = type.GetProperties();
-            string sql = string.Format("insert into {0} values(", tabName);
-            foreach (PropertyInfo p in myPropertyInfo)
+            TableInfo ti = new TableInfo(obj);
+            string sqlValue=String.Empty;
+            StringBuilder sqlB = new StringBuilder();
+            sqlB.Append(string.Format("insert into {0} values(", ti.TableName));
+            foreach (string keyName in ti.ColInfo.PropertyInfos.Keys)
             {
-                if (!Entity.GetColumnName(p).Equals("Id"))
-                {
-                    sql += "'" + p.GetValue(obj, null) + "',";
-                }
+                object value = ti.ColInfo.PropertyInfos[keyName].GetValue(obj, null);
+                if (value == null)
+                    value = string.Empty;
+                sqlValue += "'" + value + "',";
+                
             }
-            sql = sql.Substring(0, sql.Length - 1);
-            sql += ")";
-            return sql;
+            if (!string.Empty.Equals(sqlValue))
+                sqlValue = sqlValue.Substring(0, sqlValue.Length - 1);
+            else
+                return string.Empty;
+            sqlB.Append(sqlValue);
+            sqlB.Append(")");
+            return sqlB.ToString();
         }
 
         public static string BuildUpdate(object obj)

@@ -32,6 +32,11 @@ namespace SqlLib
                 TableAttribute tAttribute = objs[0] as TableAttribute;
                 tableName = tAttribute.TableName;
             }
+            else
+            {
+                tableName = type.Name;
+            }
+
             return tableName;
         }
 

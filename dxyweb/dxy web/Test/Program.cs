@@ -30,8 +30,14 @@ namespace Test
             //SqlLib.PE_Files pef = new SqlLib.PE_Files();
             //new SqlLib.SQLManager().Insert(pef);
             //SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
+
             User u = new User();
-            new TableInfo(u);
+            //u.Id = "1";
+            //u.Name = "dxy";
+            //u.Age = "25";
+            string sql = SqlBuilder.BuildInsert(u);
+            Console.Read();
+             
         }
 
         static void Main(string[] args)
