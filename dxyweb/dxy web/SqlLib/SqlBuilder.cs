@@ -12,24 +12,37 @@ namespace SqlLib
         public static string BuildInsert(object obj)
         {
             TableInfo ti = new TableInfo(obj);
-            string sqlValue=String.Empty;
-            StringBuilder sqlB = new StringBuilder();
-            sqlB.Append(string.Format("insert into {0} values(", ti.TableName));
+            string sqlValue = String.Empty;
+            string sqlColumn = String.Empty;
+
             foreach (string keyName in ti.ColInfo.PropertyInfos.Keys)
             {
-                object value = ti.ColInfo.PropertyInfos[keyName].GetValue(obj, null);
-                if (value == null)
-                    value = string.Empty;
-                sqlValue += "'" + value + "',";
-                
+                PropertyInfo pi = ti.ColInfo.PropertyInfos[keyName];
+                if (!ClsUtil.IsHide(pi))
+                {
+                    object value = pi.GetValue(obj, null);
+                    if (value != null)
+                    {
+                        string sqlColName=string.Empty;
+                        string sqlColValue=string.Empty;
+                        ClsUtil.GetColSqlNameValue(obj, pi, out sqlColName, out sqlColValue);
+                        if (sqlColValue == null)
+                            continue;
+                        sqlColumn += sqlColName + ",";
+
+                        sqlValue += sqlColValue + ",";
+                    }
+                }
             }
-            if (!string.Empty.Equals(sqlValue))
+            if (sqlValue != null && sqlValue.Length>0)
+            {
                 sqlValue = sqlValue.Substring(0, sqlValue.Length - 1);
+                sqlColumn = sqlColumn.Substring(0, sqlColumn.Length - 1);
+            }
             else
                 return string.Empty;
-            sqlB.Append(sqlValue);
-            sqlB.Append(")");
-            return sqlB.ToString();
+
+            return string.Format("insert into {0}({1}) values({2})", ti.TableName,sqlColumn,sqlValue);
         }
 
         public static string BuildUpdate(object obj)
@@ -51,23 +64,35 @@ namespace SqlLib
             return sql;
         }
 
-        public static string BuildUpdate(object obj,string where)
+        public static string BuildUpdate(object obj, string where)
         {
-            Type type = obj.GetType();
-            PropertyInfo[] myPropertyInfo = type.GetProperties();
-            string sql = string.Format("update {0} set ", obj.ToString().Replace("SqlLib.", ""));
-            foreach (PropertyInfo p in myPropertyInfo)
+            TableInfo ti = new TableInfo(obj);
+            string sqlSet = String.Empty;
+
+            foreach (string keyName in ti.ColInfo.PropertyInfos.Keys)
             {
-                //   Entity.GetColumnName(propertie[0])
-                if (!Entity.GetColumnName(p).Equals("Id"))
+                PropertyInfo pi = ti.ColInfo.PropertyInfos[keyName];
+                if (!ClsUtil.IsHide(pi))
                 {
-                    sql += Entity.GetColumnName(p) + "='" + p.GetValue(obj, null) + "',";
-                    //     sql += "'" + p.GetValue(obj, null) + "',";
+                    object value = pi.GetValue(obj, null);
+                    if (value != null)
+                    {
+                        string item = ClsUtil.GetSqlSet(obj, pi);
+                        if (item==null)
+                            continue;
+                        sqlSet += item + ",";
+
+                    }
                 }
             }
-            sql = sql.Substring(0, sql.Length - 1);
-            sql += " where " + where;
-            return sql;
+            if (sqlSet != null && sqlSet.Length > 0)
+            {
+                sqlSet = sqlSet.Substring(0, sqlSet.Length - 1);
+            }
+            else
+                return string.Empty;
+
+            return string.Format("update {0} set {1} where {2}", ti.TableName, sqlSet, where);
         }
 
         public static string BuildDelete(object obj)
@@ -78,7 +103,7 @@ namespace SqlLib
             return sql;
         }
 
-        public static string BuildDelete(object obj,string where)
+        public static string BuildDelete(object obj, string where)
         {
             Type type = obj.GetType();
             PropertyInfo[] myPropertyInfo = type.GetProperties();

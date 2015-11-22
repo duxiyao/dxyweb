@@ -32,10 +32,10 @@ namespace Test
             //SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
 
             User u = new User();
-            //u.Id = "1";
+            //u.Id = 1;
             //u.Name = "dxy";
-            //u.Age = "25";
-            string sql = SqlBuilder.BuildInsert(u);
+            //u.Age = 25;
+            string sql = SqlBuilder.BuildUpdate(u,"");
             Console.Read();
              
         }
