@@ -47,21 +47,10 @@ namespace SqlLib
 
         public static string BuildUpdate(object obj)
         {
-            Type type = obj.GetType();
-            PropertyInfo[] myPropertyInfo = type.GetProperties();
-            string sql = string.Format("update {0} set ", obj.ToString().Replace("SqlLib.", ""));
-            foreach (PropertyInfo p in myPropertyInfo)
-            {
-                //   Entity.GetColumnName(propertie[0])
-                if (!Entity.GetColumnName(p).Equals("Id"))
-                {
-                    sql += Entity.GetColumnName(p) + "='" + p.GetValue(obj, null) + "',";
-                    //     sql += "'" + p.GetValue(obj, null) + "',";
-                }
-            }
-            sql = sql.Substring(0, sql.Length - 1);
-            sql += " where id=" + myPropertyInfo[0].GetValue(obj, null);
-            return sql;
+            string sqlWhere = ClsUtil.GetIdWhereSql(obj);
+            if (sqlWhere == null)
+                return null;
+            return BuildUpdate(obj, sqlWhere);
         }
 
         public static string BuildUpdate(object obj, string where)

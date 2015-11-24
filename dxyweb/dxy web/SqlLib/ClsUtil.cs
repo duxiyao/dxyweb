@@ -21,6 +21,15 @@ namespace SqlLib
             return false;
         }
 
+        public static bool IsKey(PropertyInfo proper)
+        {
+            Object[] objs = proper.GetCustomAttributes(typeof(KeyAttribute), true);
+            if (objs.Length > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public static string GetTableName(object obj)
         {
@@ -175,6 +184,74 @@ namespace SqlLib
                 return null;
             else
                 return colSqlName + "=" + colSqlValue;
+        }
+
+        public static string GetIdWhereSql(object obj)
+        {
+            PropertyInfo properKey = null;
+            string keyName = string.Empty;
+            string keyValue = string.Empty;
+            Type type = obj.GetType();
+            PropertyInfo[] myPropertyInfo = type.GetProperties();
+
+            foreach (PropertyInfo p in myPropertyInfo)
+            {
+                if (ClsUtil.IsKey(p))
+                {
+                    properKey = p;
+                    break;
+                }
+                else
+                    continue;
+            }
+
+            Object[] ok = properKey.GetCustomAttributes(typeof(KeyAttribute), true);
+            if (ok.Length > 0)
+            {
+                KeyAttribute cAttribute = ok[0] as KeyAttribute;
+                if (cAttribute != null)
+                {
+                    keyName = cAttribute._Key;
+                }
+            }
+
+            if (keyName.Equals(string.Empty))
+            {
+                keyName = properKey.Name;
+            }
+
+            string ppName = properKey.PropertyType.Name.ToLower();
+            if (ppName.Equals("string"))
+            {
+                keyValue = "'" + properKey.GetValue(obj, null) + "'";
+            }
+            else if (ppName.Contains("int"))
+            {
+                string strv = Convert.ToString(properKey.GetValue(obj, null));
+                int intv = int.Parse(strv);
+                if (intv != 0)
+                    keyValue = Convert.ToString(strv);
+                else
+                    keyValue = null;
+            }
+            else if (ppName.Contains("datetime"))
+            {
+                string strv = Convert.ToString(properKey.GetValue(obj, null));
+                if ("0001/1/1 0:00:00".Equals(strv))
+                {
+                    keyValue = null;
+                }
+                else
+                    keyValue = "'" + strv + "'";
+            }
+            else
+            {
+                keyValue = Convert.ToString(properKey.GetValue(obj, null));
+            }
+            if (keyValue != null)
+                return keyName + keyValue;
+            else
+                return null;
         }
 
     }
