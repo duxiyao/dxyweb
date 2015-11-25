@@ -64,12 +64,17 @@ namespace BLL
         /// <summary>
         /// 用户名密码错误
         /// </summary>
-        public static int ERRACCOUNTPWD= 11;
+        public static int ERRACCOUNTPWD = 11;
         public static string STRERRACCOUNTPWD = "用户名密码错误!";
         /// <summary>
         /// voip生成错误
         /// </summary>
         public static int ERRGENERATEVOIP = 11;
         public static string STRERRGENERATEVOIP = "voip生成错误!";
+        /// <summary>
+        /// 身份信息查询失败
+        /// </summary>
+        public static int ERRQUERYINFO = 12;
+        public static string STRERRQUERYINFO = "身份信息查询失败!";
     }
 }

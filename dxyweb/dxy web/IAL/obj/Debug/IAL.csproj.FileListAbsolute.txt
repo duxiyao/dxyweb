@@ -40,3 +40,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\Model.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.csprojResolveAssemblyReference.cache
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.dll
+E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.pdb

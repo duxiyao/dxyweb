@@ -41,12 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="ts\BTeacherInfo.cs" />
     <Compile Include="LeaveMsg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="TabUserInfo.cs" />
+    <Compile Include="ts\BStudentInfo.cs" />
     <Compile Include="ts\DateTimeExtensions.cs" />
     <Compile Include="ts\UserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SqlLib\SqlLib.csproj">
+      <Project>{ed5ed2be-265d-4029-b52d-d2338e11d960}</Project>
+      <Name>SqlLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

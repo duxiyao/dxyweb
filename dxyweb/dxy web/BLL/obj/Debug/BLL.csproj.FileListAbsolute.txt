@@ -79,3 +79,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\bin\Debug\Model.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BLL\obj\Debug\BLL.pdb
+E:\study\dxyweb\dxyweb\dxy web\BLL\bin\Debug\SqlLib.dll
+E:\study\dxyweb\dxyweb\dxy web\BLL\bin\Debug\SqlLib.pdb

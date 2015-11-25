@@ -15,3 +15,4 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Email\bin\Debug\Email.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Email\bin\Debug\Email.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.pdb
+E:\study\dxyweb\dxyweb\dxy web\Email\obj\Debug\Email.csprojResolveAssemblyReference.cache
