@@ -31,11 +31,20 @@ namespace Test
             //new SqlLib.SQLManager().Insert(pef);
             //SqlLib.Entity.IsHide(pef.GetType().GetProperties()[0]);
 
-            User u = new User();
+            //User u = new User();
             //u.Id = 1;
             //u.Name = "dxy";
             //u.Age = 25;
-            string sql = SqlBuilder.BuildUpdate(u,"");
+            //string sql = SqlBuilder.BuildUpdate(u,"");
+
+            Tmp tmp = new Tmp();
+            tmp.Id = 23;
+            tmp.Name = "test";
+            tmp.Num = "22";
+            bool f = DbUtil.DeleteByWhere<Tmp>("num='&&'");
+            //tmp = DbUtil.GetModelByWhere<Tmp>("id=23");
+
+            //List<Tmp> tlist = DbUtil.GetListByWhere<Tmp>("num='1'");
             Console.Read();
              
         }

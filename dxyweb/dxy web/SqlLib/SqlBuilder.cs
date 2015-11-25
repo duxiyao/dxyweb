@@ -67,7 +67,7 @@ namespace SqlLib
                     if (value != null)
                     {
                         string item = ClsUtil.GetSqlSet(obj, pi);
-                        if (item==null)
+                        if (item==null||item.Trim().Length==0)
                             continue;
                         sqlSet += item + ",";
 
@@ -86,18 +86,19 @@ namespace SqlLib
 
         public static string BuildDelete(object obj)
         {
-            Type type = obj.GetType();
-            PropertyInfo[] myPropertyInfo = type.GetProperties();
-            string sql = string.Format("delete from {0} where id={1}", obj.ToString().Replace("SqlLib.", ""), myPropertyInfo[0].GetValue(obj, null));
-            return sql;
+            string sqlWhere = ClsUtil.GetIdWhereSql(obj);
+            if (sqlWhere == null)
+                return null;
+            return BuildDelete(obj, sqlWhere);
         }
 
         public static string BuildDelete(object obj, string where)
         {
-            Type type = obj.GetType();
-            PropertyInfo[] myPropertyInfo = type.GetProperties();
-            string sql = string.Format("delete from {0} where {1}", obj.ToString().Replace("SqlLib.", ""), where);
+            TableInfo ti = new TableInfo(obj);
+            string sql = string.Format("delete from {0} where {1}", ti.TableName, where);
             return sql;
         }
+
+        
     }
 }

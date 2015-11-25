@@ -28,6 +28,8 @@ namespace SqlLib
             {
                 return true;
             }
+            if (proper.Name.ToLower().Equals("id"))
+                return true;
             return false;
         }
 
@@ -75,11 +77,15 @@ namespace SqlLib
         public static string GetColumnName(PropertyInfo proper)
         {
             string columnName = string.Empty;
-            Object[] objs = proper.GetCustomAttributes(typeof(ColumnAttribute), true);
+            Object[] objs = proper.GetCustomAttributes(typeof(FieldAttribute), true);
             if (objs.Length > 0)
             {
-                ColumnAttribute cAttribute = objs[0] as ColumnAttribute;
-                columnName = cAttribute.ColumnName;
+                FieldAttribute cAttribute = objs[0] as FieldAttribute;
+                columnName = cAttribute.Fields;
+            }
+            else
+            {
+                columnName = proper.Name;
             }
             return columnName;
         }
@@ -140,6 +146,8 @@ namespace SqlLib
 
         public static string GetSqlSet(object obj, PropertyInfo proper)
         {
+            if (ClsUtil.IsKey(proper))
+                return null;
             string colSqlName = string.Empty;
             string colSqlValue = string.Empty;
             Object[] objs = proper.GetCustomAttributes(typeof(FieldAttribute), true);
@@ -201,10 +209,16 @@ namespace SqlLib
                     properKey = p;
                     break;
                 }
+                else if (p.Name.ToLower().Equals("id") && properKey==null)
+                    properKey = p;
                 else
                     continue;
             }
 
+            if (properKey == null)
+            {
+                return null;
+            }
             Object[] ok = properKey.GetCustomAttributes(typeof(KeyAttribute), true);
             if (ok.Length > 0)
             {
@@ -249,7 +263,7 @@ namespace SqlLib
                 keyValue = Convert.ToString(properKey.GetValue(obj, null));
             }
             if (keyValue != null)
-                return keyName + keyValue;
+                return keyName +"="+ keyValue;
             else
                 return null;
         }
