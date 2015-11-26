@@ -86,7 +86,10 @@ namespace SqlLib
                     try
                     {
                         string colName = reader.GetName(i);
-                        ti.ColInfo.PropertyInfos[colName].SetValue(t, reader.GetValue(i), null);
+                        if (ti.ColInfo.PropertyInfos.ContainsKey(colName))
+                            ti.ColInfo.PropertyInfos[colName].SetValue(t, reader.GetValue(i), null);
+                        else
+                            ti.ColInfo.KeyPropertyInfo.SetValue(t, reader.GetValue(i), null);
                     }
                     catch (Exception)
                     {
@@ -133,8 +136,11 @@ namespace SqlLib
                 {
                     try
                     {
-                        string colName = reader.GetName(i);
-                        ti.ColInfo.PropertyInfos[colName].SetValue(t, reader.GetValue(i), null);
+                        string colName = reader.GetName(i); 
+                        if (ti.ColInfo.PropertyInfos.ContainsKey(colName))
+                            ti.ColInfo.PropertyInfos[colName].SetValue(t, reader.GetValue(i), null);
+                        else
+                            ti.ColInfo.KeyPropertyInfo.SetValue(t, reader.GetValue(i), null);
                     }
                     catch (Exception)
                     {                        

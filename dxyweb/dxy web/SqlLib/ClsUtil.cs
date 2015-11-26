@@ -18,6 +18,8 @@ namespace SqlLib
                     keyName = cAttribute._Key;
                 return true;
             }
+            if (proper.Name.ToLower().Equals("id"))
+                return true;
             return false;
         }
 

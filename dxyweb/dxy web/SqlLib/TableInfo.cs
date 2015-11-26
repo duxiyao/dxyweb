@@ -23,7 +23,7 @@ namespace SqlLib
         private object obj;
         public string KeyName;
         public PropertyInfo KeyPropertyInfo { get; set; }
-        public Dictionary<string, PropertyInfo> PropertyInfos = new Dictionary<string, PropertyInfo>();
+        public Dictionary<string, PropertyInfo> PropertyInfos = new Dictionary<string, PropertyInfo>(StringComparer.OrdinalIgnoreCase);
 
         public ColumnInfo(object obj)
         {
