@@ -10,6 +10,14 @@ namespace DAL.ts
 {
     public class DaoUserInfo
     {
+        public UserInfo SelectById(string id)
+        {
+            string sql = "select * from tab_ts_user_basic_info where id=? ";
+            OleDbParameter[] oleDbParameters = { new OleDbParameter("@id",id)
+                                               };
+            UserInfo userInfo = Select(sql, oleDbParameters);
+            return userInfo;
+        }
 
         public UserInfo SelectByPhonePwd(string phone, string pwd)
         {
@@ -103,7 +111,7 @@ namespace DAL.ts
         /// <param name="id"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public bool UpdateUserInfoKV(int intType,string id, Dictionary<string, string> p)
+        public bool UpdateUserInfoKV(int intType, string id, Dictionary<string, string> p)
         {
             if (p == null || p.Count == 0)
                 return false;
@@ -129,16 +137,16 @@ namespace DAL.ts
                         break;
                 }
                 string s = "";
-                
+
                 List<OleDbParameter> l = new List<OleDbParameter>();
                 foreach (string k in p.Keys)
                 {
                     l.Add(new OleDbParameter(k, p[k]));
                     s = s + k + "=? , ";
                 }
-                string sql = sqlPre + s.Substring(0,s.Length-2)  + surffix;
-                            
-                 
+                string sql = sqlPre + s.Substring(0, s.Length - 2) + surffix;
+
+
                 l.Add(new OleDbParameter("@a.id", id));
                 if (SQLHelper.ExecuteSql(sql, l.ToArray()) > 0)
                     return true;
@@ -166,7 +174,7 @@ namespace DAL.ts
             {
                 return false;
             }
-        } 
+        }
 
         public bool Insert(string phone, string pwd)
         {

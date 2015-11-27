@@ -6,6 +6,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
 using SqlLib;
+using BDMapLib;
 
 namespace Test
 {
@@ -49,9 +50,109 @@ namespace Test
              
         }
 
+
+        static void testBDmap(){
+
+            string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
+            string p = "ak=FF220617922875eb62a6d9db2c7dd479";
+            //string ret = HttpReqp.HttpGet(url, p);
+            string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
+         
+
+            //string url1 = "http://api.map.baidu.com/geodata/v3/geotable/detail";
+            //ret = Http.c(url1).Add("ak", "FF220617922875eb62a6d9db2c7dd479").Add("id", "125348").ExeGet();
+            Console.WriteLine(ret);
+            
+            //string ret1 = Uri.UnescapeDataString(ret);
+            //Console.WriteLine(ret1);
+            Console.Read();
+        }
+
+        static void testBDmapDel()
+        {
+            string url = "http://api.map.baidu.com/geodata/v3/geotable/delete";
+            string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").Add("id", "125348").ExePost();
+            Console.WriteLine(ret);
+        }
+
+        static void testmap()
+        {
+            //string ret = Col.CreateStrCol("身份", "identity", "50");
+            //string ret1 = Col.CreateDoubleCol("价格", "price");
+            //string ret2 = Col.CreateIntCol("好评", "praise");
+
+            //string ret0 = Col.QueryList(Conf.GEOID);
+
+            //string ret = Col.DelColById("188577", Conf.GEOID);
+            //string ret1 = Col.DelColById("188578", Conf.GEOID);
+            //string ret2 = Col.DelColById("188579", Conf.GEOID);
+
+            //Dictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("title", "first");
+            //dic.Add("address", "软件园东站");
+            //dic.Add("tags", "专业");
+            //dic.Add("latitude", "39.924475");
+            //dic.Add("longitude", "116.403689");
+
+            //dic.Add("identity", "老师");
+            //dic.Add("price", "20");
+            //dic.Add("praise", "5");
+            //POI.CreatePOI(dic);
+
+            //dic = new Dictionary<string, string>();
+            //dic.Add("title", "two");
+            //dic.Add("address", "软件园东站2");
+            //dic.Add("tags", "专业2");
+            //dic.Add("latitude", "39.924475");
+            //dic.Add("longitude", "116.403689");
+
+            //dic.Add("identity", "学生");
+            //dic.Add("price", "10");
+            //dic.Add("praise", "4");
+            //POI.CreatePOI(dic);
+
+            //dic = new Dictionary<string, string>();
+            //dic.Add("title", "three");
+            //dic.Add("address", "软件园东站3");
+            //dic.Add("tags", "专业3");
+            //dic.Add("latitude", "39.924475");
+            //dic.Add("longitude", "116.403689");
+
+            //dic.Add("identity", "老师");
+            //dic.Add("price", "15");
+            //dic.Add("praise", "2");
+            //POI.CreatePOI(dic);
+
+            //dic = new Dictionary<string, string>();
+            //dic.Add("title", "four");
+            //dic.Add("address", "软件园东站4");
+            //dic.Add("tags", "专业4");
+            //dic.Add("latitude", "39.924475");
+            //dic.Add("longitude", "116.403689");
+
+            //dic.Add("identity", "老师");
+            //dic.Add("price", "13");
+            //dic.Add("praise", "1");
+            //POI.CreatePOI(dic);
+
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("title", "three");
+            //dic.Add("tags", "专业");
+            //dic.Add("district", "东城区");
+            //POI.QueryPOI(dic);
+
+            dic.Add("location", "116.403689,39.924475");
+            POI.NearbyPOI(dic);
+
+            Console.Read();
+        }
+
         static void Main(string[] args)
         {
-            testSqllib();
+            testmap();
+            //testBDmap();
+            //testBDmapDel();
+            //testSqllib();
             //Regex reg = new Regex(@"url\((['""]?)(.+[^'""])\1\)");  //注意里面的引号 要用双引号表示，而不是用反斜杠
             ////Console.WriteLine(reg.Match(@"{background-image:url(//ssl.gstatic.com/ui/v1/menu/checkmark.png);backgro")); 
             ////输出 url(//ssl.gstatic.com/ui/v1/menu/checkmark.png)
@@ -115,12 +216,6 @@ namespace Test
             //string result = Uri.UnescapeDataString(content);
             //Console.WriteLine(result);//操作成功
 
-            //string url = "http://api.map.baidu.com/geodata/v3/geotable/list";
-            //string p = "ak=FF220617922875eb62a6d9db2c7dd479";
-            //string ret = HttpReqp.HttpGet(url, p);
-            ////string ret = Http.c(url).Add("ak", "FF220617922875eb62a6d9db2c7dd479").ExeGet();
-
-            ////Console.WriteLine(Uri.UnescapeDataString(ret));
             //Console.Read();
         }
         public static bool IsPhone(string phone)

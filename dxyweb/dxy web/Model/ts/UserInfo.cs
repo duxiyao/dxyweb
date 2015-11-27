@@ -7,7 +7,7 @@ namespace Model.ts
 {
     public class UserInfo
     {
-        private int id;
+        private int id=-1;
 
         public int Id
         {

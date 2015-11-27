@@ -34,3 +34,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Email.pdb
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.dll
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.pdb
+E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.dll
+E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.pdb
