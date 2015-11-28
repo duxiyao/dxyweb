@@ -135,14 +135,14 @@ namespace Test
             //dic.Add("praise", "1");
             //POI.CreatePOI(dic);
 
-            Dictionary<string, string> dic = new Dictionary<string, string>();
+            //Dictionary<string, string> dic = new Dictionary<string, string>();
             //dic.Add("title", "three");
             //dic.Add("tags", "专业");
             //dic.Add("district", "东城区");
             //POI.QueryPOI(dic);
 
-            dic.Add("location", "116.403689,39.924475");
-            POI.NearbyPOI(dic);
+            //dic.Add("location", "116.403689,39.924475");
+            //POI.NearbyPOI(dic);
 
             Console.Read();
         }

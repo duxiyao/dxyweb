@@ -6,7 +6,7 @@ namespace BDMapLib
 {
     public class POI
     {
-        public static void CreatePOI(Dictionary<string,string> dic)
+        public static EnCreatePOI CreatePOI(Dictionary<string, string> dic)
         {
             if(dic==null)
                 dic=new Dictionary<string,string>();
@@ -15,8 +15,8 @@ namespace BDMapLib
             dic.Add("ak",Conf.AK);
             string url="http://api.map.baidu.com/geodata/v3/poi/create";
             string ret = Http.c(url).SetEscapeTrue().SetKv(dic).ExePost();
-            Entity en = Entity.FromJson<Entity>(ret);
-            string s = "";
+            EnCreatePOI en = Entity.FromJson<EnCreatePOI>(ret);
+            return en;
         }
 
         public static void QueryPOI(Dictionary<string, string> dic)

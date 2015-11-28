@@ -51,9 +51,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResCode.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="ts\BLPOIInfo.cs" />
     <Compile Include="ts\BLUserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BDMapLib\BDMapLib.csproj">
+      <Project>{a102897c-bcf8-4b65-a499-b07e33981128}</Project>
+      <Name>BDMapLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CCPRestSDK\CCPRestSDK.csproj">
       <Project>{91de7103-4a6c-4383-a9ac-d2f80efc41e8}</Project>
       <Name>CCPRestSDK</Name>

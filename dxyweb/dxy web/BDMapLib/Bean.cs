@@ -38,6 +38,10 @@ namespace BDMapLib
     }
 
 
+    public class EnCreatePOI : Entity
+    {
+        public string Id { get; set; }
+    }
 
     public class EnCreateGeoTab : Entity
     {
