@@ -179,7 +179,7 @@ namespace SqlLib
             else if (ppName.Contains("datetime"))
             {
                 string strv = Convert.ToString(proper.GetValue(obj, null));
-                if ("0001/1/1 0:00:00".Equals(strv))
+                if (DateTime.Parse(strv).Year==1)
                 {
                     colSqlValue = null;
                 }

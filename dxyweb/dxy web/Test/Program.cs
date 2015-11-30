@@ -149,7 +149,11 @@ namespace Test
 
         static void Main(string[] args)
         {
-            testmap();
+            Model.ts.BStudentInfo info = new Model.ts.BStudentInfo();
+            info.PoiId = "1554";
+            SqlLib.DbUtil.UpdateByWhere(info, "ubid='" + "17" + "'");
+                
+            //testmap();
             //testBDmap();
             //testBDmapDel();
             //testSqllib();
@@ -216,7 +220,7 @@ namespace Test
             //string result = Uri.UnescapeDataString(content);
             //Console.WriteLine(result);//操作成功
 
-            //Console.Read();
+            Console.Read();
         }
         public static bool IsPhone(string phone)
         {

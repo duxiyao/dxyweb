@@ -75,6 +75,10 @@
       <Project>{00D73700-FF37-4847-BED1-9BE4174E9B56}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SqlLib\SqlLib.csproj">
+      <Project>{ed5ed2be-265d-4029-b52d-d2338e11d960}</Project>
+      <Name>SqlLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

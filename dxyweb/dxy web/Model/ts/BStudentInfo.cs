@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Model.ts
@@ -9,7 +8,7 @@ namespace Model.ts
     public class BStudentInfo
     {
         public int Id { get; set; }
-        public string Latlng { get; set; }
+        public string PoiId { get; set; }
         public int UbId { get; set; }
         public DateTime DataBirthday { get; set; }
         public string Grade { get; set; }

@@ -9,8 +9,12 @@ namespace BLL.ts
 {
     public class BLPOIInfo
     {
-        public void insert(string identity,string price,string praise,string title, string tags, string latitude, string longitude, string radius, string addr, string locType, string locationDescribe, string poiInfo)
+        public bool insert(string ubId, string identity, string price, string praise, string title, string tags, string latitude, string longitude, string radius, string addr, string locType, string locationDescribe, string poiInfo)
         {
+            if (ubId == null || ubId.Trim().Length == 0)
+                return false;
+
+
 
             Dictionary<string, string> dic = new Dictionary<string, string>();
             add("title", title, dic);
@@ -35,8 +39,40 @@ namespace BLL.ts
                 poi.LocType = locType;
                 poi.LocationDescribe = locationDescribe;
                 poi.poiInfo = poiInfo;
+                poi.PoiId = en.Id;
+                if (SqlLib.DbUtil.Insert(poi))
+                {
+                    if ("student".Equals(identity))
+                    {
+                        Model.ts.BStudentInfo sinfo = SqlLib.DbUtil.GetModelByWhere<Model.ts.BStudentInfo>("ubid=" + ubId);
+                        if (sinfo != null && sinfo.PoiId != null && sinfo.PoiId.Trim().Length > 0)
+                        {
+                            //SqlLib.DbUtil.DeleteByWhere<Model.ts.TSPOIInfo>("")
+                            BDMapLib.POI.DeletePOI(sinfo.PoiId);
+                        }
 
+                        Model.ts.BStudentInfo info = new BStudentInfo();
+                        info.PoiId = en.Id;
+                        if (SqlLib.DbUtil.UpdateByWhere(info, "ubid=" + ubId ))
+                            return true;
+                    }
+                    else if ("teacher".Equals(identity))
+                    {
+                        Model.ts.BTeacherInfo sinfo = SqlLib.DbUtil.GetModelByWhere<Model.ts.BTeacherInfo>("ubid=" + ubId);
+                        if (sinfo != null && sinfo.PoiId != null && sinfo.PoiId.Trim().Length > 0)
+                        {
+                            //SqlLib.DbUtil.DeleteByWhere<Model.ts.TSPOIInfo>("")
+                            BDMapLib.POI.DeletePOI(sinfo.PoiId);
+                        }
+
+                        Model.ts.BTeacherInfo info = new BTeacherInfo();
+                        info.PoiId = en.Id;
+                        if (SqlLib.DbUtil.UpdateByWhere(info, "ubid='" + ubId + "'"))
+                            return true;
+                    }
+                }
             }
+            return false;
         }
 
         private void add(string k, string v, Dictionary<string, string> dic)

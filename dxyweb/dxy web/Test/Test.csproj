@@ -60,6 +60,10 @@
       <Project>{b3f36d32-7bd9-46d2-a252-889fd76e0576}</Project>
       <Name>Email</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{00d73700-ff37-4847-bed1-9be4174e9b56}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SqlLib\SqlLib.csproj">
       <Project>{ed5ed2be-265d-4029-b52d-d2338e11d960}</Project>
       <Name>SqlLib</Name>
