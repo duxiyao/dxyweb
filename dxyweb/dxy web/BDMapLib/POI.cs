@@ -51,7 +51,7 @@ namespace BDMapLib
         /// region=北京&ak=您的ak&geotable_id=****&tags=酒店&sortby=distance:1|price:1 &filter=price:200,300
         /// </summary>
         /// <param name="dic"></param>
-        public static string LocalPOI(Dictionary<string, string> dic)
+        public static EnLocalPOI LocalPOI(Dictionary<string, string> dic)
         {
             if (dic == null)
                 dic = new Dictionary<string, string>();
@@ -59,8 +59,8 @@ namespace BDMapLib
             dic.Add("ak", Conf.AK);
             string url = "http://api.map.baidu.com/geosearch/v3/local";
             string ret = Http.c(url).SetEscapeTrue().SetKv(dic).ExeGet();
-            POIEntity en = POIEntity.FromJson<POIEntity>(ret);
-            return ret;
+            EnLocalPOI en = POIEntity.FromJson<EnLocalPOI>(ret);
+            return en;
         }
 
         public static EnCreatePOI DeletePOI(string poiId)
