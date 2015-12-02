@@ -43,7 +43,7 @@ namespace BDMapLib
         public List<string> Location { get; set; }
         public int Distance { get; set; }
 
-
+        public object UInfo { get; set; }
     }
 
 
