@@ -2623,6 +2623,72 @@
 							"isAbstract": false,
 							"isFinalSpecialization": false,
 							"isLeaf": false
+						},
+						{
+							"_type": "UMLActor",
+							"_id": "AAAAAAFRZqvTxs6HwcY=",
+							"_parent": {
+								"$ref": "AAAAAAFQklV8hsPeUO8="
+							},
+							"name": "买家",
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false
+						},
+						{
+							"_type": "UMLActor",
+							"_id": "AAAAAAFRZqwL+87nzGo=",
+							"_parent": {
+								"$ref": "AAAAAAFQklV8hsPeUO8="
+							},
+							"name": "卖家",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAFRZqyecNBTIpw=",
+									"_parent": {
+										"$ref": "AAAAAAFRZqwL+87nzGo="
+									},
+									"source": {
+										"$ref": "AAAAAAFRZqwL+87nzGo="
+									},
+									"target": {
+										"$ref": "AAAAAAFRZqvTxs6HwcY="
+									},
+									"visibility": "public"
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAFRZqy3RNCUyRU=",
+									"_parent": {
+										"$ref": "AAAAAAFRZqwL+87nzGo="
+									},
+									"source": {
+										"$ref": "AAAAAAFRZqwL+87nzGo="
+									},
+									"target": {
+										"$ref": "AAAAAAFRZqwpWs94mbw="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false
+						},
+						{
+							"_type": "UMLActor",
+							"_id": "AAAAAAFRZqwpWs94mbw=",
+							"_parent": {
+								"$ref": "AAAAAAFQklV8hsPeUO8="
+							},
+							"name": "邻铺",
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false
 						}
 					],
 					"visibility": "public",
@@ -12558,6 +12624,123 @@
 					"isFinalSpecialization": false,
 					"isLeaf": false,
 					"isIndirectlyInstantiated": true
+				}
+			],
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFRZoI6bc0dkU4=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "UMLM",
+			"ownedElements": [
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFRZoK67EYY55o=",
+					"_parent": {
+						"$ref": "AAAAAAFRZoI6bc0dkU4="
+					},
+					"name": "RealPoi",
+					"documentation": "table---->tab_realtime_position",
+					"visibility": "public",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFRZoK67UYZk9U=",
+							"_parent": {
+								"$ref": "AAAAAAFRZoK67EYY55o="
+							},
+							"name": "id",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "int",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFRZoK67UYaV0g=",
+							"_parent": {
+								"$ref": "AAAAAAFRZoK67EYY55o="
+							},
+							"name": "ubId",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "int",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFRZoK67UYbM4A=",
+							"_parent": {
+								"$ref": "AAAAAAFRZoK67EYY55o="
+							},
+							"name": "userType",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "int",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFRZoK67UYcG9Y=",
+							"_parent": {
+								"$ref": "AAAAAAFRZoK67EYY55o="
+							},
+							"name": "latlng",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "String",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFRZoK67kYd9HI=",
+							"_parent": {
+								"$ref": "AAAAAAFRZoK67EYY55o="
+							},
+							"name": "DataBirthday",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "DateTime",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						}
+					],
+					"isAbstract": false,
+					"isFinalSpecialization": false,
+					"isLeaf": false,
+					"isActive": false
 				}
 			],
 			"visibility": "public"

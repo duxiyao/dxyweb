@@ -49,6 +49,7 @@
     <Compile Include="TabUserInfo.cs" />
     <Compile Include="ts\BStudentInfo.cs" />
     <Compile Include="ts\DateTimeExtensions.cs" />
+    <Compile Include="ts\RealPos.cs" />
     <Compile Include="ts\TSPOIInfo.cs" />
     <Compile Include="ts\UserInfo.cs" />
   </ItemGroup>
