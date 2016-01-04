@@ -38,14 +38,16 @@ namespace Test
             //u.Age = 25;
             //string sql = SqlBuilder.BuildUpdate(u,"");
 
-            Tmp tmp = new Tmp();
-            tmp.Id = 23;
-            tmp.Name = "test";
-            tmp.Num = "22";
-            bool f = DbUtil.DeleteByWhere<Tmp>("num='&&'");
+            //Tmp tmp = new Tmp();
+            //tmp.Id = 23;
+            //tmp.Name = "test";
+            //tmp.Num = "22";
+            //bool f = DbUtil.DeleteByWhere<Tmp>("num='&&'");
+
             //tmp = DbUtil.GetModelByWhere<Tmp>("id=23");
 
             //List<Tmp> tlist = DbUtil.GetListByWhere<Tmp>("num='1'");
+
             Console.Read();
              
         }
@@ -147,11 +149,33 @@ namespace Test
             Console.Read();
         }
 
+        public static string RESTADDRESS = "112.124.25.36";
+        public static string RESTPORT = "8883";
+        public static string ACCOUNTSID = "ddbd993f002c11e5b37eac853d9f52ec";
+        public static string ACCOUNTTOKEN = "12d504dfcf1ed0284b7de4ff7ce739e3";
+        public static string APPID = "f0fc99a44844ed3c01486cb614ba0004";
+
+        static void testcallback()
+        {
+
+            CCPRestSDK.CCPRestSDK api = new CCPRestSDK.CCPRestSDK();
+
+            //ip格式如下，不带https://
+            bool isInit = api.init(RESTADDRESS, RESTPORT);
+            //api.setAccount(ACCOUNTSID, ACCOUNTTOKEN);
+            api.setSubAccount(ACCOUNTSID, ACCOUNTTOKEN, "80000300592148", "eRuJZAO8");
+            api.setAppId(APPID);
+            Dictionary<string, object>  tmp=api.CallBack("18701416082", "15811488360", "呵呵", "哈哈", "");
+            Console.Read();
+        }
+
         static void Main(string[] args)
         {
-            Model.ts.BStudentInfo info = new Model.ts.BStudentInfo();
-            info.PoiId = "1554";
-            SqlLib.DbUtil.UpdateByWhere(info, "ubid='" + "17" + "'");
+            testcallback();
+
+            //Model.ts.BStudentInfo info = new Model.ts.BStudentInfo();
+            //info.PoiId = "1554";
+            //SqlLib.DbUtil.UpdateByWhere(info, "ubid='" + "17" + "'");
                 
             //testmap();
             //testBDmap();
