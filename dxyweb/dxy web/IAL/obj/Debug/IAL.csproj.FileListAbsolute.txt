@@ -42,3 +42,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\obj\Debug\IAL.pdb
 E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.dll
 E:\study\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\IAL\bin\Debug\SqlLib.pdb

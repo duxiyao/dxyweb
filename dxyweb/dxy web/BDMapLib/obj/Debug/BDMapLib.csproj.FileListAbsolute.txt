@@ -4,3 +4,9 @@ E:\study\dxyweb\dxyweb\dxy web\BDMapLib\bin\Debug\Newtonsoft.Json.dll
 E:\study\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.dll
 E:\study\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.pdb
 E:\study\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\bin\Debug\BDMapLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\bin\Debug\BDMapLib.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.csprojResolveAssemblyReference.cache
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\BDMapLib\obj\Debug\BDMapLib.pdb

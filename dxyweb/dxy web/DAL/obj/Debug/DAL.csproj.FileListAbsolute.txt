@@ -54,3 +54,5 @@ E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.dll
 E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\obj\Debug\DAL.pdb
 E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\SqlLib.dll
 E:\study\dxyweb\dxyweb\dxy web\DAL\bin\Debug\SqlLib.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\SqlLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\DAL\bin\Debug\SqlLib.pdb

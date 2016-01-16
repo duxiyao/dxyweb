@@ -165,7 +165,7 @@ namespace Test
             //api.setAccount(ACCOUNTSID, ACCOUNTTOKEN);
             api.setSubAccount(ACCOUNTSID, ACCOUNTTOKEN, "80000300592148", "eRuJZAO8");
             api.setAppId(APPID);
-            Dictionary<string, object>  tmp=api.CallBack("18701416082", "15811488360", "呵呵", "哈哈", "");
+            Dictionary<string, object> tmp = api.CallBack("18701416082", "15701282815", "18701416082", "15701282815", "");
             Console.Read();
         }
 

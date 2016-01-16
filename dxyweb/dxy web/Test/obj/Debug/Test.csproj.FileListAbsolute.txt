@@ -38,3 +38,9 @@ E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.dll
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.pdb
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\Model.dll
 E:\study\dxyweb\dxyweb\dxy web\Test\bin\Debug\Model.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Model.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.dll
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\BDMapLib.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\Model.pdb
+E:\GitHub\dxyweb\dxyweb\dxyweb\dxy web\Test\bin\Debug\SqlLib.pdb
